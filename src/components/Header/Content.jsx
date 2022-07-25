@@ -10,14 +10,14 @@ const Content = () => {
   const form2ref = useRef();
   
   useEffect(() => {
-    //Movement of left rect
+    // Movement of left rect
     gsap.to('.form1', {
       rotate: 15,
       repeat: -1,
       duration: 2.5,
       yoyo: true
     });
-    //Movemet of right rect
+    // Movement of right rect
     gsap.to('.form2', {
       y: -100,
       yoyo: true,
@@ -25,13 +25,12 @@ const Content = () => {
       duration: 2.5,
       repeatRefresh: 1
     });
-    //Titles
-    gsap.to(spans('.title'), {
-      x: -1000,
-      stagger: 1.5,
-      yoyo:true,
-      repeat: -1
-    })
+    // Titles
+    gsap.to(spans(".title"), {
+      opacity: 1,
+      stagger: 1,
+      duration: 1,
+    });
   }, []);
   
   return (
