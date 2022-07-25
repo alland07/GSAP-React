@@ -9,29 +9,37 @@ const Content = () => {
   const form1Ref = useRef();
   const form2ref = useRef();
   
-  useEffect(() => {
-    // Movement of left rect
-    gsap.to('.form1', {
-      rotate: 15,
-      repeat: -1,
-      duration: 2.5,
-      yoyo: true
-    });
-    // Movement of right rect
-    gsap.to('.form2', {
-      y: -100,
-      yoyo: true,
-      repeat: -1,
-      duration: 2.5,
-      repeatRefresh: 1
-    });
-    // Titles
+  const launchTitleAnim = () => {
     gsap.to(spans(".title"), {
       opacity: 1,
       stagger: 1,
       duration: 1,
     });
+  }
+  
+  useEffect(() => {
+    setTimeout(()=>{
+      // Movement of left rect
+      gsap.to(form1Ref.current, {
+        rotate: 15,
+        repeat: -1,
+        duration: 2.5,
+        yoyo: true
+      });
+      // Movement of right rect
+      gsap.to(form2ref.current, {
+        y: -100,
+        yoyo: true,
+        repeat: -1,
+        duration: 2.5,
+        repeatRefresh: 1
+      });
+    }, 3000);
+    // Titles
+    launchTitleAnim();
   }, []);
+  
+  
   
   return (
     <section className='headerContent' >
