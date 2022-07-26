@@ -9,6 +9,10 @@ body{
   min-height: 100vh;
   background-color: $bf;
 }
+.container{
+  width: 85vw;
+  margin: 0 auto;
+}
 
 @import "common";
 @import 'header';
