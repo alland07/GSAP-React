@@ -10,5 +10,7 @@ body{
   background-color: $bf;
 }
 
+@import "common";
 @import 'header';
+@import 'skill';
 
