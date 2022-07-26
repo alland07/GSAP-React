@@ -4,14 +4,26 @@
 body{
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
-}
-.App {
-  min-height: 100vh;
   background-color: $bf;
 }
 .container{
   width: 85vw;
   margin: 0 auto;
+}
+.App{
+  position: relative;
+  min-height: 3000px;
+  .ariane{
+    position: absolute;
+    top: 0;
+    transform-origin: top;
+    transform: scaleY(0.8);
+    z-index: -1;
+    margin: 0;
+  }
+  .ariane2{
+    display: none
+  }
 }
 
 @import "common";
