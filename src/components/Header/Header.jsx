@@ -6,10 +6,10 @@ import {useRef} from "react";
 const Header = () => {
   
   const spanRef = useRef();
-  let spans = gsap.utils.selector(spanRef);
+  const tl = gsap.timeline();
   
-  const hoverLinks = () => {
-    gsap.fromTo(spans('.underline'), {
+  const hoverLinks = (index) => {
+    tl.fromTo(spanRef.current, {
       width: "0%",
       left: "0%",
     }, {
@@ -18,8 +18,8 @@ const Header = () => {
     });
   };
   
-  const onLeaveLinks = () => {
-    gsap.fromTo(spans('.underline'), {
+  const onLeaveLinks = (index) => {
+    tl.fromTo(spanRef.current, {
       width: "100%",
       left: "0%",
     }, {
@@ -29,6 +29,7 @@ const Header = () => {
       immediateRender: false
     });
   };
+  
   
   return (
     <>
@@ -40,8 +41,8 @@ const Header = () => {
               <a
                 className='nav_Link'
                 href='#'
-                onMouseEnter={hoverLinks}
-                onMouseLeave={onLeaveLinks}
+                onMouseEnter={() => hoverLinks(1)}
+                onMouseLeave={() => onLeaveLinks(1)}
               >
                 About
               </a>
@@ -51,8 +52,8 @@ const Header = () => {
               <a
                 className='nav_Link'
                 href='#'
-                onMouseEnter={hoverLinks}
-                onMouseLeave={onLeaveLinks}
+                onMouseEnter={() => hoverLinks(2)}
+                onMouseLeave={() => onLeaveLinks(2)}
               >
                 Projects
               </a>
@@ -62,8 +63,8 @@ const Header = () => {
               <a
                 className='nav_Link'
                 href='#'
-                onMouseEnter={hoverLinks}
-                onMouseLeave={onLeaveLinks}
+                onMouseEnter={() => hoverLinks(3)}
+                onMouseLeave={() => onLeaveLinks(3)}
               >
                 Contact
               </a>
