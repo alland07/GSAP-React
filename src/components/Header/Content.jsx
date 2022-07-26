@@ -1,5 +1,6 @@
 import {useEffect, useRef} from "react";
 import {gsap} from 'gsap';
+import GoBottom from "./GoBottom";
 
 const Content = () => {
   
@@ -43,16 +44,19 @@ const Content = () => {
   
   return (
     <section className='headerContent' >
-      {/*Form1*/}
-      <div className='form1' ref={form1Ref}></div>
-      {/*Text*/}
-      <div className='titlePos' ref={titleRef}>
-        <span className='title'>Front-End</span><br/>
-        <span className='title'>Web</span><br/>
-        <span className='title'>Developer</span><br/>
+      <div className='content'>
+        {/*Form1*/}
+        <div className='form1' ref={form1Ref}></div>
+        {/*Text*/}
+        <div className='titlePos' ref={titleRef}>
+          <span className='title'>Front-End</span><br/>
+          <span className='title'>Web</span><br/>
+          <span className='title'>Developer</span><br/>
+        </div>
+        {/*Form2*/}
+        <div className='form2' ref={form2ref}></div>
       </div>
-      {/*Form2*/}
-      <div className='form2' ref={form2ref}></div>
+      <GoBottom />
     </section>
   );
 };
