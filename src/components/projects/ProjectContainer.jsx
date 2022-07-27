@@ -5,27 +5,35 @@ import {useRef, useState} from "react";
 import {gsap, Power2} from 'gsap';
 
 const ProjectContainer = () => {
+  
   const [hovered, setHovered] = useState(false);
   const cardRef = useRef();
+  const tl = gsap.timeline({});
   
   const hoverCard = () => {
-    setHovered(true);
-    gsap.to(cardRef.current, {
-      width: '40%',
-      rotateY: -360,
+    tl.to(cardRef.current, {
+      width: '20vw',
+      height: '80%',
       ease: Power2.easeInOut,
-      duration: 2
+      duration: 0.5,
+      rotateY: -360,
+      onComplete: () => {
+        setHovered(true);
+      }
     });
   }
   
   const leaveCard = () => {
-    setHovered(false);
-    gsap.to(cardRef.current, {
-      width: '10%',
-      rotateY: 360,
-      ease: Power2.easeInOut,
-      duration: 2
-    });
+    if(hovered) {
+      setHovered(false);
+      tl.to(cardRef.current, {
+        width: '10%',
+        height: '70%',
+        ease: Power2.easeInOut,
+        duration: 0.5,
+        rotateY: 360
+      });
+    }
   }
   
   return(

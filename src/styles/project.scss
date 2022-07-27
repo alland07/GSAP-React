@@ -8,10 +8,11 @@
   height: 90%;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
 }
 .borderCard{
-  width: 10%;
-  height: 60%;
+  width: 8%;
+  height: 70%;
   margin: auto;
   overflow: hidden;
 }
@@ -59,6 +60,18 @@
       font-style: italic ;
       color: $bf;
     }
+    .languageContainer{
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      span{
+        min-width: 30%;
+        border: 2px solid $bf;
+        border-radius: 50px;
+        color: $bf;
+        font-style: oblique;
+      }
+    }
     .description{
       width: 100%;
       font-size: 15px;
@@ -67,12 +80,13 @@
     }
     a{
       width: 40%;
-      margin: 0 auto;
+      margin: 10px auto;
       border-radius: 10px;
       background-color: $bf;
       color: $grey;
       text-align: center;
       text-decoration: none;
+      padding: 10px 0;
     }
   }
 }
