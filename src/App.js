@@ -4,6 +4,7 @@ import SkillContainer from "./components/skills/SkillContainer";
 import {gsap} from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {useEffect, useRef} from "react";
+import ProjectContainer from "./components/projects/ProjectContainer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +28,6 @@ function App() {
         end: "bottom bottom",
         onUpdate: (e) => {
           path.style.strokeDashoffset = pathL - (e.progress * pathL * 2);
-          console.log(e.progress);
         }
       },
       strokeDashoffset: pathL,
@@ -44,6 +44,7 @@ function App() {
       </svg>
       <Header/>
       <SkillContainer />
+      <ProjectContainer />
     </div>
   );
 }
