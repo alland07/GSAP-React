@@ -23,9 +23,7 @@ const SectionTitle =
       left: "0%",
     }, {
       width: "0%",
-      left: "100%",
-      duration: 2,
-      immediateRender: false
+      duration: 0.5,
     });
   };
   return(
