@@ -11,11 +11,14 @@ const Content = () => {
   const form2ref = useRef();
   
   const launchTitleAnim = () => {
-    gsap.to(spans(".title"), {
+    gsap.fromTo(spans(".title"), {
+      opacity: 0,
+      stagger: 1,
+    },{
       opacity: 1,
       stagger: 1,
-      duration: 1,
       repeat: -1,
+      repeatDelay: 0.8,
     });
   }
   
@@ -36,7 +39,7 @@ const Content = () => {
         duration: 2.5,
         repeatRefresh: 1
       });
-    }, 3000);
+    }, 1000);
     // Titles
     launchTitleAnim();
   }, []);
