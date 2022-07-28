@@ -15,6 +15,7 @@ const Content = () => {
       opacity: 1,
       stagger: 1,
       duration: 1,
+      repeat: -1,
     });
   }
   

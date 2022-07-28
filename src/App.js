@@ -27,7 +27,16 @@ function App() {
         start: "top top",
         end: "bottom bottom",
         onUpdate: (e) => {
-          path.style.strokeDashoffset = pathL - (e.progress * pathL * 2);
+          if(e.progress < 0.38) {
+            console.log(e.progress);
+            path.style.strokeDashoffset = pathL - (e.progress * pathL * 1.8);
+          } else if(e.progress >= 0.38 && e.progress < 0.60){
+            path.style.strokeDashoffset = pathL - (e.progress * pathL * 2);
+          } else {
+            console.log(e.progress)
+            path.style.strokeDashoffset = pathL - (e.progress * pathL * 1.1);
+          }
+          
         }
       },
       strokeDashoffset: pathL,
