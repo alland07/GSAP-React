@@ -28,9 +28,8 @@ const SectionTitle =
         start: `top ${start}`,
         end: `+=200`,
         scrub: true,
-        markers: {startColor: "green", endColor: "red", fontSize: "12px"}
       },
-    })
+    });
   });
   
   /**const hoverTitle = () => {

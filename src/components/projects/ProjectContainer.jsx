@@ -10,15 +10,13 @@ const ProjectContainer = () => {
   const cardRef = useRef();
   
   const hoverCard = () => {
+    setHovered(true);
     gsap.to(cardRef.current, {
       width: '20vw',
       height: '80%',
       ease: Power2.easeInOut,
       duration: 0.5,
       rotateY: -360,
-      onComplete: () => {
-        setHovered(true);
-      }
     });
   }
   
