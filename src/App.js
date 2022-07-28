@@ -5,6 +5,7 @@ import {gsap} from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {useEffect, useRef} from "react";
 import ProjectContainer from "./components/projects/ProjectContainer";
+import Contact from "./components/contact/Contact";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,12 +29,10 @@ function App() {
         end: "bottom bottom",
         onUpdate: (e) => {
           if(e.progress < 0.38) {
-            console.log(e.progress);
             path.style.strokeDashoffset = pathL - (e.progress * pathL * 1.8);
           } else if(e.progress >= 0.38 && e.progress < 0.60){
             path.style.strokeDashoffset = pathL - (e.progress * pathL * 2);
           } else {
-            console.log(e.progress)
             path.style.strokeDashoffset = pathL - (e.progress * pathL * 1.1);
           }
           
@@ -54,6 +53,7 @@ function App() {
       <Header/>
       <SkillContainer />
       <ProjectContainer />
+      <Contact />
     </div>
   );
 }

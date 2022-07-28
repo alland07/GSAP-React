@@ -1,0 +1,15 @@
+@import "variables";
+
+.contactSection{
+  height: 100vh;
+  align-items: center;
+  position: relative;
+  .moving{
+    width: 100px;
+    height: 100px;
+    background-color: $grey;
+    position: absolute;
+    top: 25%;
+    left: -12%;
+  }
+}
